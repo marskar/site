@@ -33,11 +33,10 @@
     <item>
       <title></title>
       <link>/home/about/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 -0400</pubDate>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
       
       <guid>/home/about/</guid>
-      <description>Biography Lena Smith is a professor of artificial intelligence at the Stanford AI Lab. Her research interests include distributed robotics, mobile computing and programmable matter. She leads the Robotic Neurobiology group, which develops self-reconfiguring robots, systems of self-organizing robots, and mobile sensor networks.
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque elit, tristique placerat feugiat ac, facilisis vitae arcu. Proin eget egestas augue. Praesent ut sem nec arcu pellentesque aliquet.</description>
+      <description>Biography Martin Skarzynski, a Cancer Prevention Fellow since 2017, is passionate about Bioinformatics, Data Science and Statistical Computing. Martin uses the Python and R programming languages and command line tools to explore, analyze, visualize and present data and has a strong interest in reproducibility, scientific publishing workflows, and open data/science best practices. Martin is excited to apply his computational skills in combination with his Genomics and Immunology background to the study and prevention of cancer.</description>
     </item>
     
     <item>

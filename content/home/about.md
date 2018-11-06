@@ -2,7 +2,7 @@
 # About/Biography widget.
 widget = "about"
 active = true
-date = 2016-04-20T00:00:00
+date = "2016-04-20T00:00:00"
 
 # Order that this section will appear in.
 weight = 5
@@ -10,31 +10,42 @@ weight = 5
 # List your academic interests.
 [interests]
   interests = [
-    "Artificial Intelligence",
-    "Computational Linguistics",
-    "Information Retrieval"
+    "Cancer Prevention🦀🛡️",
+    "Machine Learning🤖",
+    "Public Health⚕️",
+    "Data Science📈📊📉",
+    "Rstats®",
+    "Python🐍",
+    "Bioinformatics💻",
+    "Biostatistics μ=(ΣXi)/N"
   ]
 
 # List your qualifications (such as academic degrees).
 [[education.courses]]
-  course = "PhD in Artificial Intelligence"
-  institution = "Stanford University"
-  year = 2012
+  course = "MPH in Epidemiologic and Biostatistical Methods for Public Health and Clinical Research"
+  institution = "Johns Hopkins University"
+  year = 2018
 
 [[education.courses]]
-  course = "MEng in Artificial Intelligence"
-  institution = "Massachusetts Institute of Technology"
+  course = "PhD in Tumor Biology"
+  institution = "Georgetown University"
+  year = 2015
+
+[[education.courses]]
+  course = "MS in Biotechnology"
+  institution = "Jagiellonian University"
   year = 2009
 
 [[education.courses]]
-  course = "BSc in Artificial Intelligence"
-  institution = "Massachusetts Institute of Technology"
-  year = 2008
+  course = "BA in Biology"
+  institution = "St. Mary's College of Maryland"
+  year = 2007
  
 +++
 
 # Biography
 
-Lena Smith is a professor of artificial intelligence at the Stanford AI Lab. Her research interests include distributed robotics, mobile computing and programmable matter. She leads the Robotic Neurobiology group, which develops self-reconfiguring robots, systems of self-organizing robots, and mobile sensor networks.
+Martin Skarzynski, a Cancer Prevention Fellow since 2017, is passionate about Bioinformatics, Data Science and Statistical Computing. Martin uses the Python and R programming languages and command line tools to explore, analyze, visualize and present data and has a strong interest in reproducibility, scientific publishing workflows, and open data/science best practices. Martin is excited to apply his computational skills in combination with his Genomics and Immunology background to the study and prevention of cancer.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque elit, tristique placerat feugiat ac, facilisis vitae arcu. Proin eget egestas augue. Praesent ut sem nec arcu pellentesque aliquet. Duis dapibus diam vel metus tempus vulputate. 
+Outside of the Cancer Prevention Fellowship Program, Martin is co-chair of the Bioinformatics and Data Science Department at the Foundation for the Advancement of Education in the Sciences (FAES), where he has been an instructor since 2015 and currently teaches Introduction to Python (BIOF309). Martin is also an instructor for Software and Data Carpentry, non-profit organizations that teach computational skills, and an Associate Editor at the journal Frontiers in Public Health.
+
