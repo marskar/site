@@ -10,7 +10,7 @@ draft = false
 authors = ["Martin Skarzynski"]
 
 tags = ["slides"]
-summary = "Create a beautifully simple website or blog in under 10 minutes."
+summary = "Create a beautifully simple slide deck in minutes. :rocket:"
 
 # Projects (optional).
 #   Associate this post with one or more of your projects.
@@ -22,7 +22,7 @@ summary = "Create a beautifully simple website or blog in under 10 minutes."
 
 # Featured image
 # To use, add an image named `featured.jpg/png` to your project's folder. 
-# [image]
+[image]
   # Caption (optional)
   # caption = "Image credit: [**Unsplash**](https://unsplash.com/photos/CpkOjOcXdUY)"
 
@@ -31,7 +31,7 @@ summary = "Create a beautifully simple website or blog in under 10 minutes."
   focal_point = ""
 
   # Show image only in page previews?
-#   preview_only = false
+  preview_only = false
 
 # Set captions for image gallery.
 
