@@ -1,15 +1,15 @@
 +++
-title = "Academic: the website designer for Hugo"
-subtitle = "Create a beautifully simple website in under 10 minutes :rocket:"
+title = "Host HTML slides on GitHub pages"
+subtitle = "Create beautifully simple slide decks in minutes :rocket:"
 
 date = 2016-04-20T00:00:00
 lastmod = 2018-01-13T00:00:00
 draft = false
 
 # Authors. Comma separated list, e.g. `["Bob Smith", "David Jones"]`.
-authors = []
+authors = ["Martin Skarzynski"]
 
-tags = ["Academic"]
+tags = ["slides"]
 summary = "Create a beautifully simple website or blog in under 10 minutes."
 
 # Projects (optional).
@@ -22,16 +22,16 @@ summary = "Create a beautifully simple website or blog in under 10 minutes."
 
 # Featured image
 # To use, add an image named `featured.jpg/png` to your project's folder. 
-[image]
+# [image]
   # Caption (optional)
-  caption = "Image credit: [**Unsplash**](https://unsplash.com/photos/CpkOjOcXdUY)"
+  # caption = "Image credit: [**Unsplash**](https://unsplash.com/photos/CpkOjOcXdUY)"
 
   # Focal point (optional)
   # Options: Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight
   focal_point = ""
 
   # Show image only in page previews?
-  preview_only = false
+#   preview_only = false
 
 # Set captions for image gallery.
 
@@ -76,119 +76,103 @@ image = "theme-cupcake.png"
 caption = "Cupcake"
 +++
 
-**Academic** makes it easy to create a beautiful website for free using Markdown. Customize anything on your site with widgets, themes, and language packs.
+# Host your HTML slides on GitHub pages
 
-Follow our easy [step by step guide](https://sourcethemes.com/academic/docs/install/) to learn how to build your own free website with Academic. [Check out the personal demo](https://themes.gohugo.io/theme/academic/) or the [business demo](https://sourcethemes.com/academic/) of what you'll get in less than 10 minutes.
+The goal of this tutorial is to demonstrate how to make HTML slidedecks that can be put on the web.
 
-- [View the documentation](https://sourcethemes.com/academic/docs/)
-- [Ask a question](http://discuss.gohugo.io/)
-- [Request a feature or report a bug](https://github.com/gcushen/hugo-academic/issues)
-- Updating? View the [Update Guide](https://sourcethemes.com/academic/docs/update/) and [Release Notes](https://sourcethemes.com/academic/updates/)
-- Support development of Academic:
-  - [Donate a coffee](https://paypal.me/cushen)
-  - [Become a backer on Patreon](https://www.patreon.com/cushen)
-  - [Decorate your laptop or journal with an Academic sticker](https://www.redbubble.com/people/neutreno/works/34387919-academic)
-  - [Wear the T-shirt](https://academic.threadless.com/)
+Instructions for how to turn [Markdown](https://www.markdownguide.org/) (`.md`), [R Markdown](https://rmarkdown.rstudio.com/lesson-1.html) (`.Rmd`), and [Jupyter Notebook](https://jupyterlab.readthedocs.io/en/stable/user/notebook.html) (`.ipynb`) files into slides are detailed below.
 
-[![Screenshot](https://raw.githubusercontent.com/gcushen/hugo-academic/master/academic.png)](https://github.com/gcushen/hugo-academic/)
+One major advantage of HTML slidedecks is that you can host them on GitHub for free and share a url, instead of resorting to email or transferring files using USB drives.
 
-Key features:
+Instead of using Powerpoint, Keynote, or Google Slides, I recommend you try to generate slides programmatically using the steps below.
 
-- Easily manage various content including homepage, blog posts, publications, talks, and projects
-- Extensible via **color themes** and **widgets/plugins**
-- Write in [Markdown](https://sourcethemes.com/academic/docs/writing-markdown-latex/) for easy formatting and code highlighting, with [LaTeX](https://en.wikibooks.org/wiki/LaTeX/Mathematics) for mathematical expressions
-- Social/academic network linking, [Google Analytics](https://analytics.google.com), and [Disqus](https://disqus.com) comments
-- Responsive and mobile friendly
-- Simple and refreshing one page design
-- Multilingual and easy to customize
+Speaking of Powerpoint, I suggest that you avoid the horrors of Microsoft Office entirely.
+- Instead of using Microsoft Word & Powerpoint and the doc(x) & ppt(x) formats, write documents and [slideshows](https://marskar.github.io/slides/) in [Markdown](https://www.markdownguide.org/) format and then converted into the desired output format using one of the three options below:
+    1. [Pandoc](https://pandoc.org/) or [Pypandoc](https://github.com/bebraw/pypandoc) (recommended for users of the [Python programming language](https://www.python.org/) and those comfortable using the [command line](https://en.wikipedia.org/wiki/Command-line_interface))
+    2. [RStudio](https://www.rstudio.com/products/rstudio/download/) or the [rmarkdown R package](https://github.com/rstudio/rmarkdown) (recommended for users of the [R programming language](https://www.r-project.org/))
+    3. [JupyterLab](https://jupyterlab.readthedocs.io/en/stable/) (or the classic [Jupyter Notebook](https://jupyterlab.readthedocs.io/en/stable/getting_started/starting.html))
+- Instead of using Microsoft Excel and the xls(x) format, save tabular data as comma-separated value (csv) files. [PyCharm](https://www.jetbrains.com/pycharm/features/), [RStudio](https://www.rstudio.com/products/rstudio/download/) and [JupyterLab](https://jupyterlab.readthedocs.io/en/stable/) all have csv viewers. These csv viewers are better options for looking at data than Excel, because they do not have the ability to edit or auto-format your raw data. [Tables that are meant to be displayed in documents](https://www.markdownguide.org/extended-syntax/#tables) can also be written in [Markdown](https://www.markdownguide.org/) format instead of in Excel.
 
-## Color Themes
+## Create HTML slides from markdown (md) using [Pandoc](http://pandoc.org/MANUAL.html#producing-slide-shows-with-pandoc) or [Pypandoc](https://github.com/bebraw/pypandoc)
 
-Academic is available in different color themes and font themes.
+The easiest way to create a slideshow is to write a simple markdown file, like `habits.md`, and use [Pandoc](http://pandoc.org/MANUAL.html#producing-slide-shows-with-pandoc) to convert it to one of the possible HTML formats.
 
-{{< gallery >}}
+There are many ways to [install Pandoc](https://pandoc.org/installing.html), but I recommend to use [Anaconda](https://conda.io/docs/glossary.html#anaconda-glossary) or [Miniconda](https://conda.io/docs/glossary.html#miniconda-glossary). The [Anaconda installer](https://docs.anaconda.com/anaconda/install/) is hundreds of MB in size because the Anaconda Python distribution includes hundreds of Python packages plus the Anaconda Navigator program. The [Miniconda installer](https://conda.io/miniconda.html) is more than ten times smaller and includes only Python and conda.
 
-## Ecosystem
+Once you have [Anaconda](https://conda.io/docs/glossary.html#anaconda-glossary) or [Miniconda](https://conda.io/docs/glossary.html#miniconda-glossary) installed, you can install [Pandoc](http://pandoc.org/MANUAL.html#producing-slide-shows-with-pandoc) using this command-line command `conda install -yc conda-forge pandoc` and then run the one of the options below:
 
-**[Academic Admin](https://github.com/sourcethemes/academic-admin):** An admin tool to import publications from BibTeX or import assets for an offline site
-
-## Install
-
-You can choose from one of the following four methods to install:
-
-* one-click install using your web browser (recommended)
-* install on your computer using Git with the Command Prompt/Terminal app
-* install on your computer by downloading the ZIP files
-* install on your computer with RStudio
-
-### Quick install using your web browser
-
-1. [Install Academic with Netlify](https://app.netlify.com/start/deploy?repository=https://github.com/sourcethemes/academic-kickstart)
-    * Netlify will provide you with a customizable URL to access your new site
-2. On GitHub, go to your newly created `academic-kickstart` repository and edit `config.toml` to personalize your site. Shortly after saving the file, your site will automatically update
-3. Read the [Quick Start Guide](https://sourcethemes.com/academic/docs/) to learn how to add Markdown content. For inspiration, refer to the [Markdown content](https://github.com/gcushen/hugo-academic/tree/master/exampleSite) which powers the [Demo](https://themes.gohugo.io/theme/academic/)
-
-### Install with Git
-
-Prerequisites:
-
-* [Download and install Git](https://git-scm.com/downloads)
-* [Download and install Hugo](https://gohugo.io/getting-started/installing/#quick-install)
-
-1. [Fork](https://github.com/sourcethemes/academic-kickstart#fork-destination-box) the *Academic Kickstart* repository and clone your fork with Git: 
-
-        git clone https://github.com/sourcethemes/academic-kickstart.git My_Website
-    
-    *Note that if you forked Academic Kickstart, the above command should be edited to clone your fork, i.e. replace `sourcethemes` with your GitHub username.*
-
-2. Initialize the theme:
-
-        cd My_Website
-        git submodule update --init --recursive
-
-### Install with ZIP
-
-1. [Download](https://github.com/sourcethemes/academic-kickstart/archive/master.zip) and extract *Academic Kickstart*
-2. [Download](https://github.com/gcushen/hugo-academic/archive/master.zip) and extract the *Academic theme* to the `themes/academic/` folder from the above step
-
-### Install with RStudio
-
-[View the guide to installing Academic with RStudio](https://sourcethemes.com/academic/docs/install/#install-with-rstudio)
-
-## Quick start
-
-1. If you installed on your computer, view your new website by running the following command:
-      
-        hugo server
-
-    Now visit [localhost:1313](http://localhost:1313) and your new Academic powered website will appear. Otherwise, if using Netlify, they will provide you with your URL.
-           
-2. Read the [Quick Start Guide](https://sourcethemes.com/academic/docs/) to learn how to add Markdown content, customize your site, and deploy it. For inspiration, refer to the [Markdown content](https://github.com/gcushen/hugo-academic/tree/master/exampleSite) which powers the [Demo](https://themes.gohugo.io/theme/academic/)
-
-3. Build your site by running the `hugo` command. Then [host it for free using Github Pages](https://georgecushen.com/create-your-website-with-hugo/) or Netlify (refer to the first installation method). Alternatively, copy the generated `public/` directory (by FTP, Rsync, etc.) to your production web server (such as a university's hosting service).
-
-## Updating
-
-Feel free to *star* the project on [Github](https://github.com/gcushen/hugo-academic/) to help keep track of updates and check out the [release notes](https://sourcethemes.com/academic/updates) prior to updating your site.
-
-Before updating the framework, it is recommended to make a backup of your entire website directory (or at least your `themes/academic` directory) and record your current version number.
-
-By default, Academic is installed as a Git submodule which can be updated by running the following command:
-
-```bash
-git submodule update --remote --merge
+```
+pandoc -t dzslides --self-contained -s habits.md -o pandoc/dzslides-pandoc.html
+pandoc -t slidy --self-contained -s habits.md -o pandoc/slidy-pandoc.html
 ```
 
-[Check out the update guide](https://sourcethemes.com/academic/docs/update/) for full instructions and alternative methods.
+Instead of using [Pandoc](http://pandoc.org/MANUAL.html#producing-slide-shows-with-pandoc) in the terminal as described above, you can also install [Pypandoc](https://github.com/bebraw/pypandoc) and convert [Markdown](https://www.markdownguide.org/) to almost any format in your Python environment (e.g. in [PyCharm](https://www.jetbrains.com/pycharm/features/))!
 
-## Feedback & Contributing
+- Pro-tip 1: You can write [Markdown](https://www.markdownguide.org/) in [PyCharm](https://www.jetbrains.com/pycharm/features/)! Press Ctrl/Cmd+N, then Enter, type out the name of the [Markdown](https://www.markdownguide.org/) file (must end in `.md`) you want to create, and press Enter again. You get [Markdown](https://www.markdownguide.org/) syntax highlighting and a live preview of your rendered [Markdown](https://www.markdownguide.org/)!
+- Pro-tip 2: If you create a new Python scratch file in [PyCharm](https://www.jetbrains.com/pycharm/features/) (Press Ctrl/Cmd+Shift+N, then Enter) and change the extension from `.py` to `.md`, PyCharm will continue to treat the file like a Python script giving you the ability to run code in your [Markdown](https://www.markdownguide.org/) document! As soon as you take the file out of the Scratches folder, [PyCharm](https://www.jetbrains.com/pycharm/features/) will treat it like a [Markdown](https://www.markdownguide.org/) file again! In short, [PyCharm](https://www.jetbrains.com/pycharm/features/) will auto-detect the file type based on its extension, but this does not apply to scratch files!
+- Pro-tip 3: To get automatic python syntax highlighting in your [Markdown](https://www.markdownguide.org/) documents on [GitHub](https://github.com/) and in [slideshows](https://marskar.github.io/slides/) created from [Markdown](https://www.markdownguide.org/) files, put three backticks (\`) followed by the word "python" above your code and then a new line below your code put another three backticks (\`). This is called a [code block](https://pandoc.org/MANUAL.html#fenced-code-blocks) in [Markdown](https://www.markdownguide.org/).
 
-Please use the [issue tracker](https://github.com/gcushen/hugo-academic/issues) to let me know about any bugs or feature requests, or alternatively make a pull request.
+### Examples of HTML slides created using [Pandoc](http://pandoc.org/MANUAL.html#producing-slide-shows-with-pandoc) or [Pypandoc](https://github.com/bebraw/pypandoc):
 
-For support, head over to the [Hugo discussion forum](http://discuss.gohugo.io).
+- [dzslides](/slides/pandoc/dzslides-pandoc.html)
+- [slidy](/slides/pandoc/slidy-pandoc.html)
 
-## License
+## Knit slides from md or Rmd to HTML in [RStudio](https://rmarkdown.rstudio.com/lesson-11.html) or from the command-line
 
-Copyright 2016-present [George Cushen](https://georgecushen.com).
+First, you will need to install R. Again, I recommend installing [Anaconda or Miniconda](https://docs.anaconda.com/anaconda/install/) and then running `conda install -yc r r-essentials`.
 
-Released under the [MIT](https://github.com/gcushen/hugo-academic/blob/master/LICENSE.md) license.
+Then, write you can run one of the commands below to make the html slideshow.
+```
+Rscript -e "rmarkdown::render('habits.md', 'ioslides_presentation', 'r/ioslides-r.html')"
+Rscript -e "rmarkdown::render('habits.md', 'slidy_presentation', 'r/slidy-r.html')"
+```
+
+You can also install RStudio by running `conda install -yc r rstudio`, open up a markdown file in RStudio, add a YAML header that specifies the `output_format` as in `habits.Rmd`, save the file and then click Preview/Knit or Press Ctrl/Cmd + Shift + K.
+
+For revealjs and xaringan slides, you must first run `install.packages('revealjs')` and `install.packages('xaringan')` in RStudio before you can Knit (Ctrl/Cmd + Shift + K).
+
+**You only need to install the packages once!**
+
+You can also run install the packages and render slides from the command-line as below:
+
+```
+Rscript -e "install.packages('revealjs', repos='http://cran.us.r-project.org')"
+Rscript -e "install.packages('xaringan', repos='http://cran.us.r-project.org')"
+```
+
+```
+Rscript -e "rmarkdown::render('revealjs.Rmd', output_file = 'r/revealjs-r.html')"
+Rscript -e "rmarkdown::render('xaringan.Rmd', output_file = 'r/xaringan.html')"
+```
+
+### Examples of HTML slides created using [RStudio](https://www.rstudio.com/products/rstudio/download/) or the [rmarkdown R package](https://github.com/rstudio/rmarkdown):
+- [ioslides](/slides/r/ioslides-r.html)
+- [slidy](/slides/r/slidy-r.html)
+- [revealjs](/slides/r/revealjs-r.html)
+- [xaringan](/slides/r/xaringan.html)
+
+## Create HTML slides from ipynb using [nbconvert](https://nbconvert.readthedocs.io/en/latest/) from the command-line
+
+You can also create slides from a Jupyter Notebook using `jupyter nbconvert`.
+
+If you have [Anaconda](https://conda.io/docs/glossary.html#anaconda-glossary) installed, you should already be able to run `jupyter nbconvert`, but if you are using [Miniconda](https://conda.io/docs/glossary.html#miniconda-glossary) you will need to install `nbconvert` by running `conda install -yc conda-forge jupyter nbconvert`.
+
+```
+url="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0"
+jupyter nbconvert revealjs.ipynb --to slides --reveal-prefix=$url
+```
+
+### An example with instructions for creating slides in JupyterLab:
+ - [revealjs](/slides/revealjs.slides.html)
+
+Exporting slides from JupyterLab does not work (great) right now.
+It requires some [additional setup](https://github.com/jupyterlab/jupyterlab/issues/4067).
+I would not recommend trying it until the next version of `jupyter nbconvert` comes out.
+
+Luckily, there are other ways to make slides from a Jupyter Notebook.
+
+1. The easiest way is to use [nbviewer](https://nbviewer.jupyter.org/), so that you can switch between [notebook](http://nbviewer.jupyter.org/github/marskar/biof309_spring2018/blob/master/slides.ipynb) and [slide view](http://nbviewer.jupyter.org/format/slides/github/marskar/biof309_spring2018/blob/master/slides.ipynb).
+2. Another approach is to use [binder for interactive notebooks/slideshows](https://mybinder.org/v2/gh/mgeier/jupyter-presentation/master?filepath=jupyter-presentation.ipynb).
+
+These two options are not the same as [creating an html slideshow from a jupyter notebook and hosting it on your website](https://marskar.github.io/jupyter-notebook-slides), but they get the job done.
+
